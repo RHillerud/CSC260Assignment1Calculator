@@ -33,6 +33,8 @@ namespace Calculator
             {
                 input.Text = input.Text + "1";
             }
+
+            buttonEquals.Focus();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -49,6 +51,8 @@ namespace Calculator
             {
                 input.Text = input.Text + "2";
             }
+
+            buttonEquals.Focus();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -65,6 +69,8 @@ namespace Calculator
             {
                 input.Text = input.Text + "3";
             }
+
+            buttonEquals.Focus();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -81,6 +87,8 @@ namespace Calculator
             {
                 input.Text = input.Text + "4";
             }
+
+            buttonEquals.Focus();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -97,6 +105,8 @@ namespace Calculator
             {
                 input.Text = input.Text + "5";
             }
+
+            buttonEquals.Focus();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -113,6 +123,8 @@ namespace Calculator
             {
                 input.Text = input.Text + "6";
             }
+
+            buttonEquals.Focus();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -129,6 +141,8 @@ namespace Calculator
             {
                 input.Text = input.Text + "7";
             }
+
+            buttonEquals.Focus();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -145,6 +159,8 @@ namespace Calculator
             {
                 input.Text = input.Text + "8";
             }
+
+            buttonEquals.Focus();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -161,6 +177,8 @@ namespace Calculator
             {
                 input.Text = input.Text + "9";
             }
+
+            buttonEquals.Focus();
         }
 
         private void button0_Click(object sender, EventArgs e)
@@ -173,7 +191,8 @@ namespace Calculator
             {
                 input.Text = input.Text + "0";
             }
-  
+
+            buttonEquals.Focus();
         }
 
         private void buttonDecimal_Click(object sender, EventArgs e)
@@ -183,7 +202,9 @@ namespace Calculator
                 output.Text = null;
             }
             if (!input.Text.Contains(".")) 
-            input.Text = input.Text + ".";         
+            input.Text = input.Text + ".";
+
+            buttonEquals.Focus();
         }
 
         private void inputOutputTextBox_TextChanged(object sender, EventArgs e)
@@ -205,6 +226,8 @@ namespace Calculator
             {
                 input.Text = input.Text.Substring(0, input.Text.Length - 1);
             }
+
+            buttonEquals.Focus();
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
@@ -217,6 +240,8 @@ namespace Calculator
             output.Text = output.Text + input.Text + " + ";
             entry.AddLast("+");
             input.Text = "0";
+
+            buttonEquals.Focus();
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
@@ -229,6 +254,8 @@ namespace Calculator
             output.Text = output.Text + input.Text + " - ";
             entry.AddLast("-");
             input.Text = "0";
+
+            buttonEquals.Focus();
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
@@ -241,6 +268,8 @@ namespace Calculator
             output.Text = output.Text + input.Text + " x ";
             entry.AddLast("x");
             input.Text = "0";
+
+            buttonEquals.Focus();
         }
 
         private void buttonDivide_Click(object sender, EventArgs e)
@@ -253,6 +282,8 @@ namespace Calculator
             output.Text = output.Text + input.Text + " / ";
             entry.AddLast("/");
             input.Text = "0";
+
+            buttonEquals.Focus();
         }
 
         private void buttonClearEntry_Click(object sender, EventArgs e)
@@ -262,6 +293,8 @@ namespace Calculator
                 output.Text = null;
             }
             input.Text = "0";
+
+            buttonEquals.Focus();
         }
 
         private void buttonSqrRoot_Click(object sender, EventArgs e)
@@ -277,9 +310,12 @@ namespace Calculator
 
             output.Text = output.Text + "√";
             input.Text = "0";
+
+            buttonEquals.Focus();
         }
 
         string[] history = new string[8];
+        //int i = 0;
 
         private void buttonSquare_Click(object sender, EventArgs e)
         {
@@ -303,6 +339,8 @@ namespace Calculator
 
             }
             input.Text = "0";
+
+            buttonEquals.Focus();
         }
 
         private void buttonPower_Click(object sender, EventArgs e)
@@ -325,6 +363,8 @@ namespace Calculator
             {
 
             }
+
+            buttonEquals.Focus();
         }
 
         private void buttonFraction_Click(object sender, EventArgs e)
@@ -337,6 +377,8 @@ namespace Calculator
             entry.AddLast("/");
             output.Text = output.Text + "1/";
             input.Text = "0";
+
+            buttonEquals.Focus();
         }
         
         private void buttonClear_Click(object sender, EventArgs e)
@@ -348,6 +390,8 @@ namespace Calculator
             entry.Clear();
             input.Text = "0";
             output.Text = null;
+
+            buttonEquals.Focus();
         }
 
         private void buttonPlusMinus_Click(object sender, EventArgs e)
@@ -358,6 +402,8 @@ namespace Calculator
             }
             output.Text = output.Text + "(-)";
             entry.AddLast("~");
+
+            buttonEquals.Focus();
         }
 
         private void buttonEquals_Click(object sender, EventArgs e)
@@ -481,5 +527,77 @@ namespace Calculator
 
             entry.Clear();
         }
+
+        private void Calculator_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
+                button1.PerformClick();
+
+            if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
+                button2.PerformClick();
+
+            if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+                button3.PerformClick();
+
+            if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
+                button4.PerformClick();
+
+            if (e.KeyCode == Keys.D5 || e.KeyCode == Keys.NumPad5)
+                button5.PerformClick();
+
+            if (e.KeyCode == Keys.D6 || e.KeyCode == Keys.NumPad6)
+                button6.PerformClick();
+
+            if (e.KeyCode == Keys.D7 || e.KeyCode == Keys.NumPad7)
+                button7.PerformClick();
+
+            if (e.KeyCode == Keys.D8 || e.KeyCode == Keys.NumPad8)
+                button8.PerformClick();
+
+            if (e.KeyCode == Keys.D9 || e.KeyCode == Keys.NumPad9)
+                button9.PerformClick();
+
+            if (e.KeyCode == Keys.D0 || e.KeyCode == Keys.NumPad0)
+                button0.PerformClick();
+
+            if (e.KeyCode == Keys.Add)
+                buttonPlus.PerformClick();
+
+            if (e.KeyCode == Keys.Subtract)
+                buttonMinus.PerformClick();
+
+            if (e.KeyCode == Keys.Multiply)
+                buttonMultiply.PerformClick();
+
+            if (e.KeyCode == Keys.Divide)
+                buttonDivide.PerformClick();
+
+            /*if(e.KeyCode == Keys.Up)
+            {
+                if(i != 7)
+                {
+                    i++;
+                    HistoryDisplay(i, history);
+                }
+            }*/
+        }
+
+        /*
+        private void HistoryEnter(string entry)
+        {
+            history[7] = history[6];
+            history[6] = history[5];
+            history[5] = history[4];
+            history[4] = history[3];
+            history[3] = history[2];
+            history[2] = history[1];
+            history[1] = history[0];
+            history[0] = entry;
+        }
+
+        private void HistoryDisplay(int index, string[] history) 
+        {
+            output.Text = history[index];
+        }*/
     }
 }

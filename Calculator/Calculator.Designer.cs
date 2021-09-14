@@ -62,7 +62,7 @@ namespace Calculator
             this.button1.Location = new System.Drawing.Point(22, 274);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 40);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 18;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -242,7 +242,7 @@ namespace Calculator
             this.buttonEquals.Location = new System.Drawing.Point(190, 320);
             this.buttonEquals.Name = "buttonEquals";
             this.buttonEquals.Size = new System.Drawing.Size(50, 40);
-            this.buttonEquals.TabIndex = 18;
+            this.buttonEquals.TabIndex = 0;
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = true;
             this.buttonEquals.Click += new System.EventHandler(this.buttonEquals_Click);
@@ -301,6 +301,7 @@ namespace Calculator
             // 
             this.input.Location = new System.Drawing.Point(22, 61);
             this.input.Name = "input";
+            this.input.ReadOnly = true;
             this.input.Size = new System.Drawing.Size(218, 23);
             this.input.TabIndex = 24;
             this.input.Text = "0";
@@ -312,11 +313,13 @@ namespace Calculator
             this.output.Location = new System.Drawing.Point(22, 12);
             this.output.Multiline = true;
             this.output.Name = "output";
+            this.output.ReadOnly = true;
             this.output.Size = new System.Drawing.Size(218, 43);
             this.output.TabIndex = 25;
             // 
             // Calculator
             // 
+            this.AcceptButton = this.buttonEquals;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(266, 373);
@@ -346,8 +349,10 @@ namespace Calculator
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.KeyPreview = true;
             this.Name = "Calculator";
             this.Text = "Calculator";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Calculator_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
